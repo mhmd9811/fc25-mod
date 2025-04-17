@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "updates"
+    label: "التحديثات"
+    folder: "updates"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "العنوان", name: "title", widget: "string" }
+      - { label: "التاريخ", name: "date", widget: "datetime" }
+      - { label: "الوصف", name: "body", widget: "markdown" }
+      - { label: "صورة", name: "image", widget: "image", required: false }
+      - { label: "رابط فيديو", name: "video", widget: "string", required: false }
